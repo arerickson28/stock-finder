@@ -44,10 +44,8 @@ document.getElementById("searchButton").addEventListener("click", function() {
 
     getTickers(requestTickers1);
 })
-
         displayNews(data);
-    });
-}
+
 function displayNews(data) {
     newsEl.innerHTML = "";
     for(let i =0; i < 3; i++){
@@ -313,46 +311,46 @@ const labels = [
     'three',
     'two',
     'one'
-  ];
-  let data = {
+];
+let data = {
     labels: labels,
     datasets: [{
-      label: 'Closing Stock Price for Last Seven Days',
-      backgroundColor: 'rgb(255, 99, 132)',
-      borderColor: 'rgb(255, 99, 132)',
-      data: [0, 10, 5, 2, 20, 30, 45],
+        label: 'Closing Stock Price for Last Seven Days',
+        backgroundColor: 'rgb(255, 99, 132)',
+        borderColor: 'rgb(255, 99, 132)',
+        data: [0, 10, 5, 2, 20, 30, 45],
     }]
-  };
+};
 
 
-  let config = {
+let config = {
     type: 'line',
     data,
     options: {
         scales: {
             x: {
-              title: {
-                color: 'blue',
-                display: true,
-                text: 'day(s)-ago'
-              }
+                title: {
+                    color: 'blue',
+                    display: true,
+                    text: 'day(s)-ago'
+                }
             },
             y: {
                 title: {
-                  color: 'blue',
-                  display: true,
-                  text: 'Stock Price ($)'
+                    color: 'blue',
+                    display: true,
+                    text: 'Stock Price ($)'
                 }
-              }
+            }
         }
     }
-    
-  };
 
-  let myChart = new Chart(
+};
+
+let myChart = new Chart(
     document.getElementById('myChart'),
     config
-  );
+);
 
 initializeLocalStorage() ;
 
